@@ -1,26 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spinner Wheel</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <button id="spin">Spin</button>
-    <span class="arrow"></span>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="wrapper">
+        <span class="arrow"></span>
+        <button id="spinner"></button>
+        <div class="container" id="container"></div>
+        <button id="spin">Spin it</button>
+      </div>
 
-    <div class="container">
-        <div class="one">1</div>
-        <div class="two">2</div>
-        <div class="three">3</div>
-        <div class="four">4</div>
-        <div class="five">5</div>
-        <div class="six">6</div>
-        <div class="seven">7</div>
-        <div class="eight">8</div>
+      <div>
+        <button id="add-item-button">Add Name</button>
+        <div class="add-name-box">
+          <p>Rakib</p>
+          <p>Sakib</p>
+          <p>Saim</p>
+          <p>Naim</p>
+          <p>Jasim</p>
+          <p>Jisan</p>
+          <p>Ibrahim</p>
+          <p>Rifat</p>
+        </div>
+      </div>
     </div>
-    
+
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
