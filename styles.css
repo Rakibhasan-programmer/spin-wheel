@@ -75,7 +75,7 @@
     top: 20%;
     left: 92%;
     z-index: 200;
-    color: orange;
+    color: #1F18C8;
 }
 .arrow::before{
     content: "\2190";
@@ -121,4 +121,7 @@
     text-align: center;
     font-weight: bold;
     font-size: 1rem;
+}
+.note{
+    color: red;
 }
