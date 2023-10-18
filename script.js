@@ -1,13 +1,3 @@
-// extracting all names
-const nameContainer = document.querySelector(".add-name-box");
-const nameElements = nameContainer.querySelectorAll("p");
-const namesArray = [];
-
-nameElements.forEach((element) => {
-  const text = element.textContent.trim();
-  namesArray.push(text);
-});
-
 // add new element to wheeler
 const addItemButton = document.getElementById("add-item-button");
 const allClass = [
@@ -21,20 +11,20 @@ const allClass = [
   "eight",
 ];
 let index = 0;
-addItemButton.addEventListener("click", () => {
+function addItem (e) {
   const newItem = document.createElement("div");
   const container = document.querySelector(".container");
 
   newItem.classList.add(allClass[index]);
-  newItem.textContent = namesArray[index];
+  newItem.textContent = e.innerText;
   container.appendChild(newItem);
 
   const parentDiv = document.querySelector(".add-name-box");
-  const childToRemove = parentDiv.querySelector("p");
+  const childToRemove = e;
   if (childToRemove) parentDiv.removeChild(childToRemove);
 
   index++;
-});
+};
 
 // spin the wheeler
 const btn = document.getElementById("spin");
@@ -43,6 +33,16 @@ let rotation = 0;
 let clicks = 0;
 
 btn.addEventListener("click", () => {
+  const namesArray = generatingArrayOfNames();
+
+  if(namesArray.length < 8){
+    return Toastify({
+      text: `You have to select all the names in the list.`,
+      duration: 2000,
+      position: "center",
+    }).showToast();
+  }
+
   ++clicks;
   if (clicks) {
     const randomRotation = Math.ceil(Math.random() * 3600);
@@ -62,8 +62,24 @@ btn.addEventListener("click", () => {
       Toastify({
         text: `Winner is ${selectedName}`,
         duration: 2000,
-        position: "center"
+        position: "center",
       }).showToast();
     }, 1000);
   }
 });
+
+
+// extracting all names
+const generatingArrayOfNames = () => {
+  const nameContainer = document.querySelector(".container");
+  const nameElements = nameContainer.querySelectorAll("div");
+  const namesArray = [];
+
+  nameElements.forEach((element) => {
+    const text = element.textContent.trim();
+    namesArray.push(text);
+    console.log("hit");
+  });
+
+  return namesArray;
+};

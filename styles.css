@@ -104,7 +104,7 @@
     color: #fff;
     font-weight: 600;
 }
-#add-item-button{
+/* #add-item-button{
     padding: 0.7rem 2.4rem;
     border: 0;
     border-radius: 5px;
@@ -114,6 +114,10 @@
     margin-bottom: 1rem;
     position: fixed;
     top: 18%;
+} */
+h3{
+    position: fixed;
+    top: 15%;
 }
 .add-name-box{
     width: 20rem;
